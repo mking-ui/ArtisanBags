@@ -10,7 +10,7 @@ const ContactUs = () => {
 
             <div className=" flex-col flex-1  justify-center mb-8 md:mb-0">
 
-                
+
                 <Image
                     src={assets.header_macbook_image} // replace with your tote bag image from assets
                     alt="artisan tote bag"
@@ -25,7 +25,7 @@ const ContactUs = () => {
             </div>
 
             {/* Right: Text */}
-            <div className="flex-1 text-center md:text-left px-4 shadow-lg py-3">
+            <div className="flex-1 text-center md:text-left px-4 shadow-lg ">
                 <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
                     Contact Us
                 </h2>
