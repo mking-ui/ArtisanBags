@@ -1,6 +1,9 @@
-import { Inngest, InngestFunction } from "inngest";
+
 import connectDB from "./db";
 import User from "@/models/User";
+
+// Create a client to send and receive events
+import { Inngest } from "inngest";
 
 // Create a client to send and receive events
 export const inngest = new Inngest({ id: "artisanbags.next" });
@@ -25,7 +28,7 @@ export const syncUserCreation = inngest.createFunction(
     }
 )// inngest function to update user data in database
 
-export const synUserUpdation = inngest.createFunction(
+export const syncUserUpdation = inngest.createFunction(
     { id: "update-user-from-clerk" },
     { event: "clerk/user-updated" },
     async ({ event }) => {
