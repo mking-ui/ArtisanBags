@@ -8,5 +8,5 @@ const userSchema = new mongoose.Schema({
     cartitems: {type: Object, default: {}},
 }, {minimize: false})
 
-const User = mongoose.models.user || mongoosw.model("user", userSchema)
+const User = mongoose.models.user || mongoose.model("user", userSchema)
 export default User
