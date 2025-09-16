@@ -10,7 +10,7 @@ export const inngest = new Inngest({ id: "artisanbags.next" });
 
 export const syncUserCreation = inngest.createFunction(
     {
-        id: "sync-user-from-cler"
+        id: "sync-user-from-clerk"
     },
     { event: "clerk/user.created" },
 
@@ -39,22 +39,22 @@ export const syncUserUpdation = inngest.createFunction(
             name: first_name + " " + last_name,
             imageUrl: image_url
         }
-        await connectDB()
-        await User.findbyIdAndUpdate(id, userData)
+        await connectDB();
+        await User.findByIdAndUpdate(id, userData);
 
     }
 )
 
 //Inngest function that is use to delete user in the user page
 
-export const syncUserDeletion = Inngest.createFunction(
+export const syncUserDeletion = inngest.createFunction(
     {id: "delete-user-with-clerk"},
     {event: "clerk/user-deleted"},
     async ({ event }) => {
         const {id} = event.data
 
-        await connectDB()
-        await User.findbyIdAndDelete(id)
+        await connectDB();
+        await User.findByIdAndDelete(id);
 
     }
     )
